@@ -48,8 +48,7 @@ export const TemplatePage: FC<{
 									<div className="tw-mt-2 tw-max-w-xl tw-text-sm tw-text-gray-500">
 										<p>
 											Please visit the author and give
-											your support or consider donating to
-											keep the themes coming.
+											your support for the theme.
 										</p>
 									</div>
 									<div className="tw-mt-3 tw-text-sm">
