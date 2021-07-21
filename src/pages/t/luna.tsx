@@ -86,8 +86,8 @@ const Template = () => {
 			>
 				{({ values, initialValues }) => (
 					<>
-						<div className="tw-flex tw-flex-col lg:tw-flex-row">
-							<div className="tw-mr-0 lg:tw-mr-4 tw-w-1/3">
+						<div className="tw-flex tw-flex-col lg:tw-flex-row tw-px-4 tw-mx-auto">
+							<div className="tw-mr-0 lg:tw-mr-4 lg:tw-w-1/3">
 								<h2>Form</h2>
 								<FormInput for="name" />
 								<div className="tw-flex tw-flex-row tw-space-x-4">

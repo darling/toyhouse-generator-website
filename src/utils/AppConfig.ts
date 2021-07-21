@@ -1,6 +1,6 @@
 export const AppConfig = {
   site_name: 'Bruhhou.se',
-  title: 'Do I really need a title for every page. (answer, no)',
-  description: 'Ur mom',
+  title: 'Safe\'s Template Editor',
+  description: 'Contact me if you need help',
   locale: 'en',
 };
