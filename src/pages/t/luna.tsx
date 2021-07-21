@@ -2,15 +2,10 @@ import { Disclosure } from '@headlessui/react';
 import { FieldArray, Formik } from 'formik';
 import { startCase } from 'lodash';
 import React from 'react';
-import {
-	FormColorInput,
-	FormInput,
-	FormLongInput,
-} from '../../components/FormGroups';
+
+import { FormColorInput, FormInput, FormLongInput } from '../../components/FormGroups';
 import { PageSegment } from '../../components/PageSegment';
 import { Meta } from '../../layout/Meta';
-import { ChevronUpIcon } from '@heroicons/react/outline';
-
 import { TemplatePage } from '../../templates/TemplatePage';
 
 const meta = {
