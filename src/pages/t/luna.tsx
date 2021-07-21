@@ -12,11 +12,13 @@ import { PageSegment } from '../../components/PageSegment';
 import { Meta } from '../../layout/Meta';
 import { TemplatePage } from '../../templates/TemplatePage';
 
-const meta = {
+const templateInfo = {
 	title: 'Luna',
-	by: '8Byte',
+	author: '8Byte',
+  authorUrl: 'https://toyhou.se/8byte',
 	description: '',
-	url: '',
+	url: 'https://toyhou.se/11686775.-f2u-luna',
+  policyUrl: 'https://toyhou.se/~forums/16.htmlcss-graphics/192248.-friede99tarts-codes-'
 };
 
 const Template = () => {
@@ -25,12 +27,13 @@ const Template = () => {
 			meta={
 				<Meta
 					title={
-						meta.title + ' by ' + meta.by ||
+						templateInfo.title + ' by ' + templateInfo.author ||
 						'Toyhouse Code Template'
 					}
-					description={meta.description}
+					description={templateInfo.description}
 				/>
 			}
+      templateInfo={templateInfo}
 		>
 			<Formik
 				initialValues={{
@@ -124,7 +127,7 @@ const Template = () => {
 													<>
 														<Disclosure.Button
 															as="div"
-															className="tw-flex tw-mb-4 tw-justify-between tw-w-full tw-px-4 tw-py-2 tw-text-sm tw-font-medium tw-text-left tw-text-purple-900 tw-bg-purple-100 tw-rounded-lg hover:tw-bg-purple-200 focus:tw-outline-none focus-visible:tw-ring focus-visible:tw-ring-purple-500 focus-visible:tw-ring-opacity-75"
+															className="tw-flex tw-mb-4 tw-justify-between tw-w-full tw-px-4 tw-py-2 tw-text-sm tw-font-medium tw-text-left tw-text-indigo-900 tw-bg-indigo-100 tw-rounded-lg hover:tw-bg-indigo-200 focus:tw-outline-none focus-visible:tw-ring focus-visible:tw-ring-indigo-500 focus-visible:tw-ring-opacity-75"
 														>
 															<span>
 																{startCase(key)}
