@@ -1,16 +1,14 @@
 const navigation = {
   main: [
+    { name: 'Toyhou.se', href: 'https://toyhou.se' },
     { name: 'About', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Accessibility', href: '#' },
-    { name: 'Partners', href: '#' },
+    { name: 'Home', href: '/' },
+    { name: 'Report an Issue', href: 'https://toyhou.se/safe' },
   ],
   social: [
     {
       name: 'GitHub',
-      href: '#',
+      href: 'https://github.com/darling',
       icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
