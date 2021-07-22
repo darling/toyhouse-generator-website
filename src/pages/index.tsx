@@ -7,6 +7,7 @@ import { Main } from '../templates/Main';
 const authors = [
 	{ name: '8Byte', slug: '8Byte' },
 	{ name: 'Togo', slug: 'Togo' },
+	{ name: 'Eggy', slug: 'Eggy' },
 	{ name: 'Safe', slug: 'Safe' },
 ];
 

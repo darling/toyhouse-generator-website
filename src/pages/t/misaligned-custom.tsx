@@ -583,12 +583,8 @@ class="container-fluid p-3 my-5" >
               <i class="fal fa-bookmark mr-1"></i>Trivia
             </h4>
             <ul>
-              <li class="mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li class="mb-2">Suspendisse sit amet massa blandit, fermentum enim a, scelerisque velit.</li>
-              <li class="mb-2">Integer interdum urna ac dui sollicitudin sollicitudin.</li>
-              <li>Nulla et consectetur diam. Aliquam ipsum mi, tristique sed vestibulum ac, aliquet eget magna.</li>
+              ${values.trivia.map(item => `<li class="mb-2">${item.value}</li>`).join('')}
             </ul>
- 
         </div>
       </div>
     </div>
@@ -596,8 +592,7 @@ class="container-fluid p-3 my-5" >
 </div>
 <div class="p-3" style="border-radius: 1em; background: ${values.colors.focal};"><p class="text-white text-center" style="letter-spacing: 1px;">
   <i class="fal fa-quote-left fa-fw mr-1 pull-left" /><span>
-  <!-- quote line here --------->
-  Write a quote or tagline here
+  ${values.quote}
   </span><i class="fal fa-quote-right fa-fw ml-1 pull-right" /></p></div>
 </div>
 `}</code>

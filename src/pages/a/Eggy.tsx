@@ -16,7 +16,7 @@ const userInformation = {
 	],
 };
 
-const templates = [{ name: 'Path', slug: 'path' }];
+const templates = [{ name: 'Misaligned (custom)', slug: 'misaligned-custom' }];
 
 const Index = () => {
 	return (
