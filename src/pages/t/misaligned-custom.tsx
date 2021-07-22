@@ -1,17 +1,10 @@
 import { FieldArray, Formik } from 'formik';
-import { concat, take, times, truncate } from 'lodash';
 import React from 'react';
 
-import {
-	FormColorInput,
-	FormGroup,
-	FormInput,
-	FormLongInput,
-} from '../../components/FormGroups';
+import { FormColorInput, FormGroup, FormInput, FormLongInput } from '../../components/FormGroups';
 import { PageSegment } from '../../components/PageSegment';
 import { Meta } from '../../layout/Meta';
 import { TemplatePage } from '../../templates/TemplatePage';
-import { Globals } from '../../utils/AppConfig';
 
 const templateInfo = {
 	title: 'Misaligned (Custom)',
@@ -71,13 +64,14 @@ const Template = () => {
 						<div className="tw-flex tw-flex-col lg:tw-flex-row tw-px-4 tw-mx-auto">
 							<div className="tw-mr-0 lg:tw-mr-4 lg:tw-w-1/3 tw-prose tw-prose-indigo">
 								<h2>Form</h2>
+                <FormInput for="title" />
 								<FormGroup title="Colors">
 									<FormColorInput for="colors.focal" />
 									<FormColorInput for="colors.contentBox" />
 									<FormColorInput for="colors.background" />
 									<FormColorInput for="colors.font" />
 								</FormGroup>
-                <FormGroup title="Profile">
+								<FormGroup title="Profile">
 									<FormInput for="profile.name" />
 									<FormInput for="profile.age" />
 									<FormInput for="profile.gender" />
@@ -86,19 +80,16 @@ const Template = () => {
 									<FormInput for="profile.demeanor" />
 									<FormInput for="profile.themeUrl" />
 								</FormGroup>
-                <FormGroup title="Content">
+								<FormGroup title="Content">
 									<FormLongInput for="about" />
-                  <FieldArray name="trivia">
+									<FieldArray name="trivia">
 										{({ remove, push }) => (
 											<div>
-												{values.trivia.length >
-													0 &&
+												{values.trivia.length > 0 &&
 													values.trivia.map(
-														(item, index) => (
+														(_item, index) => (
 															<div
-																key={
-																	index
-																}
+																key={index}
 																className="my-4"
 															>
 																<FormInput
@@ -131,7 +122,11 @@ const Template = () => {
 										)}
 									</FieldArray>
 								</FormGroup>
-                <FormGroup title="Extras">
+                <FormGroup title="Images">
+                <FormInput for="images.left" />
+                <FormInput for="images.avatar" />
+                </FormGroup>
+								<FormGroup title="Extras">
 									<FormInput for="quote" />
 								</FormGroup>
 							</div>
@@ -434,7 +429,17 @@ const Template = () => {
 																About
 															</h4>
 															<div className="mb-2">
-																{values.about}
+																{values.about
+																	.split('\n')
+																	.map(
+																		(t) => (
+																			<p>
+																				{
+																					t
+																				}
+																			</p>
+																		)
+																	)}
 															</div>
 															<h4
 																className="text-uppercase"
@@ -476,9 +481,7 @@ const Template = () => {
 												style={{ letterSpacing: 1 }}
 											>
 												<i className="fas fa-quote-left fa-fw mr-1 pull-left" />
-												<span>
-													{values.quote}
-												</span>
+												<span>{values.quote}</span>
 												<i className="fas fa-quote-right fa-fw ml-1 pull-right" />
 											</p>
 										</div>
@@ -498,7 +501,7 @@ class="container-fluid p-3 my-5" >
     <div style="border-radius: 1em; font-size: 10.5pt; background: ${values.colors.contentBox};"
      class="card border-0 h-100 pt-3 px-md-2 px-3 pb-md-0 pb-2" >
           <!----------- avatar -- use a 200 x 200 image -------------------------->
-          <img src="IMG_URL"
+          <img src="${values.images.avatar}"
           class="d-block p-2 mx-auto mb-3 rounded-circle" style="max-height:210px; background: ${values.colors.focal};">
  
           <!-------- stats --------------------------------------->
@@ -506,43 +509,43 @@ class="container-fluid p-3 my-5" >
               <div class="col-6 text-right text-uppercase pr-1" style="opacity: 0.7; letter-spacing: 1px;">
                 Name <i class="fal fa-angle-double-right fa-fw"></i></div>
               <div class="col-6 mb-2">
-                write a name</div>
+                ${values.profile.name}</div>
  
               <div class="col-6 text-right text-uppercase pr-1" style="opacity: 0.7; letter-spacing: 1px;">
                 Age <i class="fal fa-angle-double-right fa-fw"></i></div>
               <div class="col-6 mb-2">
-                much too old</div>
+              ${values.profile.age}</div>
  
               <div class="col-6 text-right text-uppercase pr-1" style="opacity: 0.7; letter-spacing: 1px;">
                 Gender <i class="fal fa-angle-double-right fa-fw"></i></div>
               <div class="col-6 mb-2">
-                content</div>
+              ${values.profile.gender}</div>
  
               <div class="col-6 text-right text-uppercase pr-1" style="opacity: 0.7; letter-spacing: 1px;">
                 Height <i class="fal fa-angle-double-right fa-fw"></i></div>
               <div class="col-6 mb-2">
-                content</div>
+              ${values.profile.height}</div>
  
               <div class="col-6 text-right text-uppercase pr-1" style="opacity: 0.7; letter-spacing: 1px;">
                 Race <i class="fal fa-angle-double-right fa-fw"></i></div>
               <div class="col-6 mb-2">
-                (or species)</div>
+              ${values.profile.race}</div>
  
               <div class="col-6 text-right text-uppercase pr-1" style="opacity: 0.7; letter-spacing: 1px;">
                 Role <i class="fal fa-angle-double-right fa-fw"></i></div>
               <div class="col-6 mb-2">
-                content</div>
+              ${values.profile.role}</div>
  
               <div class="col-6 text-right text-uppercase pr-1" style="opacity: 0.7; letter-spacing: 1px;">
                 Demeanor <i class="fal fa-angle-double-right fa-fw"></i></div>
               <div class="col-6 mb-2">
-                content</div>
+              ${values.profile.demeanor}</div>
  
               <div class="col-6 text-right text-uppercase pr-1" style="opacity: 0.7; letter-spacing: 1px;">
                 Theme <i class="fal fa-angle-double-right fa-fw"></i></div>
               <div class="col-6 mb-2">
                 <!-- link a song here -->
-                <a href="SONG_LINK" target="_BLANK" style="color: ${values.colors.focal};">
+                <a href="${values.profile.themeUrl}" target="_BLANK" style="color: ${values.colors.focal};">
                   <i class="fas fa-music-alt fa-fw" /><i class="fas fa-music fa-fw" /><i class="fas fa-music-alt fa-fw" /></a></div>
                 <!-- credit -- pls leave this -------->
               <div class="col-6 text-right text-uppercase pr-1" style="opacity: 0.7; letter-spacing: 1px;">
@@ -558,13 +561,13 @@ class="container-fluid p-3 my-5" >
       <div class="col-12 mb-3">
         <div style="background: ${values.colors.focal}; border-radius: 1em;" class="card border-0 p-3" ><h1 class="display-4 text-white mb-0">
           <!-- title block -- you can change the icon -- uses font awesome icons -->
-          <i class="fal fa-crown fa-fw" /> Title here</h1></div>
+          <i class="fal fa-crown fa-fw" /> ${values.title}</h1></div>
       </div>
  
       <div class="col-md-5 mb-md-0 mb-3">
         <div class="border-0 h-100 modal-open" style="border-radius: 1em; background: ${values.colors.contentBox};">
       <!------ FOCAL IMAGE --- will scale & crop with screen -- focus in top & center of image ----------->
-        <div style="background-image: url(IMG_URL); 
+        <div style="background-image: url(${values.images.left}); 
         background-size: cover; background-position: top center; min-height: 400px;" class="h-100"></div>
     </div>
       </div>
@@ -574,7 +577,7 @@ class="container-fluid p-3 my-5" >
             <h4 class="text-uppercase" style="letter-spacing:1px; font-weight: 300; opacity: 0.7;">
               <i class="fal fa-bookmark mr-1"></i>About
             </h4>
-            <p class="mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sit amet massa blandit, fermentum enim a, scelerisque velit. Integer interdum urna ac dui sollicitudin sollicitudin. In feugiat posuere nulla, eget lobortis ante. Aliquam magna libero, dictum sit amet scelerisque ac, scelerisque tincidunt magna. Nulla et consectetur diam. Aliquam ipsum mi, tristique sed vestibulum ac, aliquet eget magna. Mauris varius id magna vitae ullamcorper. In gravida libero consectetur, lobortis nisl sit amet, pellentesque ligula. Suspendisse tincidunt feugiat posuere. Duis dui erat, accumsan a aliquam eu, efficitur a tortor. Nunc molestie, leo in commodo aliquam, tellus augue tempor velit, non placerat ex sem non nisi.</p>
+            <div class="mb-2">${values.about.split('\n').map(c => `<p>${c}</p>`).join('')}</div>
  
             <h4 class="text-uppercase" style="letter-spacing:1px; font-weight: 300; opacity: 0.7;">
               <i class="fal fa-bookmark mr-1"></i>Trivia
@@ -592,10 +595,10 @@ class="container-fluid p-3 my-5" >
   </div>
 </div>
 <div class="p-3" style="border-radius: 1em; background: ${values.colors.focal};"><p class="text-white text-center" style="letter-spacing: 1px;">
-  <i class="fal fa-quote-left fa-fw mr-1 pull-left" /><i>
+  <i class="fal fa-quote-left fa-fw mr-1 pull-left" /><span>
   <!-- quote line here --------->
   Write a quote or tagline here
-  </i><i class="fal fa-quote-right fa-fw ml-1 pull-right" /></p></div>
+  </span><i class="fal fa-quote-right fa-fw ml-1 pull-right" /></p></div>
 </div>
 `}</code>
 							</pre>

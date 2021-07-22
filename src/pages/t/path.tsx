@@ -2399,7 +2399,7 @@ background-size: cover; background-position: center; border-radius: 8px;"></div>
     ${values.history.body
 		.split('\n')
 		.map((item) => `<p>${item}</p>`)
-		.join()}
+		.join('')}
 
 </div>
 <p class="mt-3 text-monospace text-right text-success"><i>
@@ -2657,7 +2657,7 @@ data-toggle="tooltip" data-placement="bottom" class="btn btn-success d-flex just
     ${values.personality.body
 		.split('\n')
 		.map((item) => `<p>${item}</p>`)
-		.join()}
+		.join('')}
     
 </div>
 <div class="row no-gutters align-items-center mt-2 mb-n1">
