@@ -5,6 +5,7 @@ import { FormColorInput, FormGroup, FormInput, FormLongInput } from '../../compo
 import { PageSegment } from '../../components/PageSegment';
 import { Meta } from '../../layout/Meta';
 import { TemplatePage } from '../../templates/TemplatePage';
+import { Globals } from '../../utils/AppConfig';
 
 const templateInfo = {
 	title: 'Misaligned (Custom)',
@@ -494,6 +495,7 @@ const Template = () => {
 							<h2>Results</h2>
 							<pre className="bg-dark text-white tw-p-6 tw-rounded-md tw-select-all">
 								<code>{`<!-- main container -- set bg color & font color here -->
+<!-- ${ Globals.watermark } -->
 <div style="border-radius: 1em; max-width: 1140px; box-shadow: 0 0 1em rgba(0,0,0,.25); color: ${values.colors.font}; background: ${values.colors.background};" 
 class="container-fluid p-3 my-5" >
 <div class="row no-gutters">
@@ -594,6 +596,7 @@ class="container-fluid p-3 my-5" >
   <i class="fal fa-quote-left fa-fw mr-1 pull-left" /><span>
   ${values.quote}
   </span><i class="fal fa-quote-right fa-fw ml-1 pull-right" /></p></div>
+  <!-- ${ Globals.watermark } -->
 </div>
 `}</code>
 							</pre>
