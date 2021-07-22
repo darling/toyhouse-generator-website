@@ -1,8 +1,9 @@
 import { Field } from 'formik';
 import React, { FC } from 'react';
 import { startCase } from 'lodash';
+import { Disclosure } from '@headlessui/react';
 
-export const FormInput: FC<{ for: string, value?: string }> = (props) => {
+export const FormInput: FC<{ for: string; value?: string }> = (props) => {
 	return (
 		<div className="form-group">
 			<label htmlFor={props.for}>{startCase(props.for)}</label>
@@ -41,5 +42,24 @@ export const FormColorInput: FC<{ for: string }> = (props) => {
 				className="tw-block tw-border-0"
 			/>
 		</div>
+	);
+};
+
+export const FormGroup: FC<{ title: string }> = (props) => {
+	return (
+		<Disclosure>
+			{({ open }) => (
+				<>
+					<Disclosure.Button as="div">
+						<h3>
+							{props.title} {open ? '-' : '+'}
+						</h3>
+					</Disclosure.Button>
+					<Disclosure.Panel>
+						{props.children}
+					</Disclosure.Panel>
+				</>
+			)}
+		</Disclosure>
 	);
 };

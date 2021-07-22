@@ -1,7 +1,7 @@
 const navigation = {
   main: [
     { name: 'Toyhou.se', href: 'https://toyhou.se' },
-    { name: 'About', href: '#' },
+    { name: 'About', href: '/about' },
     { name: 'Home', href: '/' },
     { name: 'Report an Issue', href: 'https://toyhou.se/safe' },
   ],

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { ReactNode, FC } from 'react';
 
 import Footer from '../components/Footer';
@@ -19,12 +20,20 @@ export const TemplatePage: FC<{
 			<div className="tw-container mx-auto">
 				<div className="">
 					<div className="tw-pt-16 tw-pb-8 tw-px-4 tw-mx-auto">
-						<h1 className="tw-font-bold">{AppConfig.title}</h1>
+						<h1 className="tw-font-bold tw-text-3xl">Safe's editor, editing: {props.templateInfo.title} by {props.templateInfo.author}</h1>
 						<p className="">{AppConfig.description}</p>
 					</div>
+
 					<div className="tw-pb-8 tw-px-4 tw-mx-auto tw-space-y-4">
+						<div>
+							<Link href="/">
+								<a className="tw-text-indigo-600">
+									&larr; Go Back
+								</a>
+							</Link>
+						</div>
 						<h2>Template Information</h2>
-            <div className="tw-bg-indigo-100 tw-py-8 tw-px-4 tw-rounded-lg">
+						<div className="tw-bg-indigo-100 tw-py-8 tw-px-4 tw-rounded-lg">
 							<h2 className="tw-text-4xl tw-font-bold">
 								{props.templateInfo.title}
 								<span className="tw-text-2xl tw-font-normal">
@@ -101,7 +110,6 @@ export const TemplatePage: FC<{
 								</div>
 							</div>
 						</div>
-						
 					</div>
 					<div className="">{props.children}</div>
 				</div>
