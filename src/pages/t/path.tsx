@@ -225,7 +225,6 @@ const Template = () => {
 														(item, index) => (
 															<div
 																key={
-																	item.value +
 																	index
 																}
 																className="my-4"

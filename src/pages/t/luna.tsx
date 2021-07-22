@@ -5,6 +5,7 @@ import React from 'react';
 
 import {
 	FormColorInput,
+	FormGroup,
 	FormInput,
 	FormLongInput,
 } from '../../components/FormGroups';
@@ -16,10 +17,11 @@ import { Globals } from '../../utils/AppConfig';
 const templateInfo = {
 	title: 'Luna',
 	author: '8Byte',
-  authorUrl: 'https://toyhou.se/8byte',
+	authorUrl: 'https://toyhou.se/8byte',
 	description: '',
 	url: 'https://toyhou.se/11686775.-f2u-luna',
-  policyUrl: 'https://toyhou.se/~forums/16.htmlcss-graphics/192248.-friede99tarts-codes-'
+	policyUrl:
+		'https://toyhou.se/~forums/16.htmlcss-graphics/192248.-friede99tarts-codes-',
 };
 
 const Template = () => {
@@ -34,7 +36,7 @@ const Template = () => {
 					description={templateInfo.description}
 				/>
 			}
-      templateInfo={templateInfo}
+			templateInfo={templateInfo}
 		>
 			<Formik
 				initialValues={{
@@ -50,9 +52,12 @@ const Template = () => {
 					species: 'Species',
 					occupation: 'Occupation',
 					residence: 'Residence',
-					summary: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ",
-					backstory: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ",
-					personality: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ",
+					summary:
+						"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ",
+					backstory:
+						"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ",
+					personality:
+						"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. ",
 					photos: {
 						cutieMark: '/img/placeholder-transparent.png',
 						banner: '/img/placeholder-solid.png',
@@ -91,37 +96,43 @@ const Template = () => {
 				{({ values, initialValues }) => (
 					<>
 						<div className="tw-flex tw-flex-col lg:tw-flex-row tw-px-4 tw-mx-auto">
-							<div className="tw-mr-0 lg:tw-mr-4 lg:tw-w-1/3">
+							<div className="tw-mr-0 lg:tw-mr-4 lg:tw-w-1/3 tw-prose tw-prose-indigo">
 								<h2>Form</h2>
-								<FormInput for="name" />
-								<div className="tw-flex tw-flex-row tw-space-x-4">
-									<FormColorInput for="color1" />
-									<FormColorInput for="color2" />
-									<FormColorInput for="color3" />
-									<FormColorInput for="color4" />
-								</div>
-								<h3>Bio</h3>
-								<FormLongInput for="summary" />
-								<FormLongInput for="backstory" />
-								<FormLongInput for="personality" />
-								<h3>Properties</h3>
-								<div className="tw-grid tw-grid-cols-2 md:tw-grid-cols-3 tw-gap-4">
-									<FormInput for="nickname" />
-									<FormInput for="gender" />
-									<FormInput for="pronouns" />
-									<FormInput for="birthday" />
-									<FormInput for="species" />
-									<FormInput for="occupation" />
-									<FormInput for="residence" />
-								</div>
-								<h3>Images</h3>
-								<div className="tw-grid tw-grid-cols-2 md:tw-grid-cols-3 tw-gap-4">
-									<FormInput for="photos.cutieMark" />
-									<FormInput for="photos.banner" />
-								</div>
-								<h3>Relationships</h3>
-								{Object.keys(initialValues.relationships).map(
-									(key) => {
+								<FormGroup title="Profile">
+									<FormInput for="name" />
+									<div className="tw-flex tw-flex-row tw-space-x-4">
+										<FormColorInput for="color1" />
+										<FormColorInput for="color2" />
+										<FormColorInput for="color3" />
+										<FormColorInput for="color4" />
+									</div>
+								</FormGroup>
+								<FormGroup title="Bio">
+									<FormLongInput for="summary" />
+									<FormLongInput for="backstory" />
+									<FormLongInput for="personality" />
+								</FormGroup>
+								<FormGroup title="Properties">
+									<div className="tw-grid tw-grid-cols-2 md:tw-grid-cols-3 tw-gap-4">
+										<FormInput for="nickname" />
+										<FormInput for="gender" />
+										<FormInput for="pronouns" />
+										<FormInput for="birthday" />
+										<FormInput for="species" />
+										<FormInput for="occupation" />
+										<FormInput for="residence" />
+									</div>
+								</FormGroup>
+								<FormGroup title="Images">
+									<div className="tw-grid tw-grid-cols-2 md:tw-grid-cols-3 tw-gap-4">
+										<FormInput for="photos.cutieMark" />
+										<FormInput for="photos.banner" />
+									</div>
+								</FormGroup>
+								<FormGroup title="Relationships">
+									{Object.keys(
+										initialValues.relationships
+									).map((key) => {
 										return (
 											<Disclosure key={key}>
 												{({ open }) => (
@@ -155,49 +166,57 @@ const Template = () => {
 												)}
 											</Disclosure>
 										);
-									}
-								)}
-								<h3>Rightside List</h3>
-								<FieldArray name="list">
-									{({ remove, push }) => (
-										<div>
-											{values.list.length > 0 &&
-												values.list.map(
-													(item, index) => (
-														<div key={item.value + index} className="my-4">
-															<FormInput
-																for={`list[${index}].value`}
-															/>
-															<button
-																className="btn btn-danger"
-																onClick={() =>
-																	remove(
-																		index
-																	)
+									})}
+								</FormGroup>
+								<FormGroup title="Design Notes">
+									<FieldArray name="list">
+										{({ remove, push }) => (
+											<div>
+												{values.list.length > 0 &&
+													values.list.map(
+														(item, index) => (
+															<div
+																key={
+																	index
 																}
+																className="my-4"
 															>
-																remove{' '}
-																{item.value}
-															</button>
-														</div>
-													)
-												)}
-											<button
-												className="btn btn-primary"
-												onClick={() =>
-													push({
-														value: 'New element',
-													})
-												}
-											>
-												Add element
-											</button>
-										</div>
-									)}
-								</FieldArray>
+																<FormInput
+																	for={`list[${index}].value`}
+																/>
+																<button
+																	className="btn btn-danger"
+																	onClick={() =>
+																		remove(
+																			index
+																		)
+																	}
+																>
+																	remove{' '}
+																	{item.value}
+																</button>
+															</div>
+														)
+													)}
+												<button
+													className="btn btn-primary"
+													onClick={() =>
+														push({
+															value: 'New element',
+														})
+													}
+												>
+													Add element
+												</button>
+											</div>
+										)}
+									</FieldArray>
+								</FormGroup>
 							</div>
 							<div>
-								<h2>Preview</h2>
+								<div className="tw-prose">
+									<h2>Preview</h2>
+								</div>
 								<PageSegment>
 									{/* ### START ### */}
 									<div className="container p-0 w-100">
@@ -444,10 +463,14 @@ const Template = () => {
 															}}
 														>
 															{values.list.map(
-																(item, index) => (
+																(
+																	item,
+																	index
+																) => (
 																	<li
 																		key={
-																			index + item.value
+																			index +
+																			item.value
 																		}
 																	>
 																		<i className="fas fa-moon" />{' '}
