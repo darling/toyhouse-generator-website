@@ -8,6 +8,7 @@ const authors = [
 	{ name: '8Byte', slug: '8Byte' },
 	{ name: 'Togo', slug: 'Togo' },
 	{ name: 'Eggy', slug: 'Eggy' },
+	{ name: 'Camy', slug: 'Camy' },
 	{ name: 'Safe', slug: 'Safe' },
 ];
 
