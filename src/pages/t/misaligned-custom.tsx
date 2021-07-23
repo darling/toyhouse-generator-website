@@ -1,7 +1,12 @@
 import { FieldArray, Formik } from 'formik';
 import React from 'react';
 
-import { FormColorInput, FormGroup, FormInput, FormLongInput } from '../../components/FormGroups';
+import {
+	FormColorInput,
+	FormGroup,
+	FormInput,
+	FormLongInput,
+} from '../../components/FormGroups';
 import { PageSegment } from '../../components/PageSegment';
 import { Meta } from '../../layout/Meta';
 import { TemplatePage } from '../../templates/TemplatePage';
@@ -65,7 +70,7 @@ const Template = () => {
 						<div className="tw-flex tw-flex-col lg:tw-flex-row tw-px-4 tw-mx-auto">
 							<div className="tw-mr-0 lg:tw-mr-4 lg:tw-w-1/3 tw-prose tw-prose-indigo">
 								<h2>Form</h2>
-                <FormInput for="title" />
+								<FormInput for="title" />
 								<FormGroup title="Colors">
 									<FormColorInput for="colors.focal" />
 									<FormColorInput for="colors.contentBox" />
@@ -123,10 +128,10 @@ const Template = () => {
 										)}
 									</FieldArray>
 								</FormGroup>
-                <FormGroup title="Images">
-                <FormInput for="images.left" />
-                <FormInput for="images.avatar" />
-                </FormGroup>
+								<FormGroup title="Images">
+									<FormInput for="images.left" />
+									<FormInput for="images.avatar" />
+								</FormGroup>
 								<FormGroup title="Extras">
 									<FormInput for="quote" />
 								</FormGroup>
@@ -138,13 +143,8 @@ const Template = () => {
 								<PageSegment>
 									<div className="tw-prose tw-prose-sm tw-rounded-lg tw-bg-gray-300 tw-p-3">
 										<p>
-											Images and Icons may render weird or
-											be placed wrongly within their
-											container. This is just the preview,
-											please try testing the code on
-											toyhouse just incase. (I don't want
-											to pay for font-awesome premium,
-											which toyhouse has.)
+											Images may render weird or be placed
+											wrongly within their container.
 										</p>
 									</div>
 									{/* ### START ### */}
@@ -495,16 +495,22 @@ const Template = () => {
 							<h2>Results</h2>
 							<pre className="bg-dark text-white tw-p-6 tw-rounded-md tw-select-all">
 								<code>{`<!-- main container -- set bg color & font color here -->
-<!-- ${ Globals.watermark } -->
-<div style="border-radius: 1em; max-width: 1140px; box-shadow: 0 0 1em rgba(0,0,0,.25); color: ${values.colors.font}; background: ${values.colors.background};" 
+<!-- ${Globals.watermark} -->
+<div style="border-radius: 1em; max-width: 1140px; box-shadow: 0 0 1em rgba(0,0,0,.25); color: ${
+									values.colors.font
+								}; background: ${values.colors.background};" 
 class="container-fluid p-3 my-5" >
 <div class="row no-gutters">
   <div class="col-lg-3 push-lg-9 mb-3">
-    <div style="border-radius: 1em; font-size: 10.5pt; background: ${values.colors.contentBox};"
+    <div style="border-radius: 1em; font-size: 10.5pt; background: ${
+		values.colors.contentBox
+	};"
      class="card border-0 h-100 pt-3 px-md-2 px-3 pb-md-0 pb-2" >
           <!----------- avatar -- use a 200 x 200 image -------------------------->
           <img src="${values.images.avatar}"
-          class="d-block p-2 mx-auto mb-3 rounded-circle" style="max-height:210px; background: ${values.colors.focal};">
+          class="d-block p-2 mx-auto mb-3 rounded-circle" style="max-height:210px; background: ${
+				values.colors.focal
+			};">
  
           <!-------- stats --------------------------------------->
           <div class="row no-gutters">
@@ -547,13 +553,17 @@ class="container-fluid p-3 my-5" >
                 Theme <i class="fal fa-angle-double-right fa-fw"></i></div>
               <div class="col-6 mb-2">
                 <!-- link a song here -->
-                <a href="${values.profile.themeUrl}" target="_BLANK" style="color: ${values.colors.focal};">
+                <a href="${
+					values.profile.themeUrl
+				}" target="_BLANK" style="color: ${values.colors.focal};">
                   <i class="fas fa-music-alt fa-fw" /><i class="fas fa-music fa-fw" /><i class="fas fa-music-alt fa-fw" /></a></div>
                 <!-- credit -- pls leave this -------->
               <div class="col-6 text-right text-uppercase pr-1" style="opacity: 0.7; letter-spacing: 1px;">
                 HTML <i class="fal fa-angle-double-right fa-fw"></i></div>
               <div class="col-6 mb-2">
-                <a href="/eggy" target="_BLANK" style="color: ${values.colors.focal};">Eggy</a></div>
+                <a href="/eggy" target="_BLANK" style="color: ${
+					values.colors.focal
+				};">Eggy</a></div>
  
           </div>
         </div>
@@ -561,13 +571,17 @@ class="container-fluid p-3 my-5" >
   <div class="col-lg-9 pull-lg-3 pr-md-3 mb-3">
     <div class="row no-gutters">
       <div class="col-12 mb-3">
-        <div style="background: ${values.colors.focal}; border-radius: 1em;" class="card border-0 p-3" ><h1 class="display-4 text-white mb-0">
+        <div style="background: ${
+			values.colors.focal
+		}; border-radius: 1em;" class="card border-0 p-3" ><h1 class="display-4 text-white mb-0">
           <!-- title block -- you can change the icon -- uses font awesome icons -->
           <i class="fal fa-crown fa-fw" /> ${values.title}</h1></div>
       </div>
  
       <div class="col-md-5 mb-md-0 mb-3">
-        <div class="border-0 h-100 modal-open" style="border-radius: 1em; background: ${values.colors.contentBox};">
+        <div class="border-0 h-100 modal-open" style="border-radius: 1em; background: ${
+			values.colors.contentBox
+		};">
       <!------ FOCAL IMAGE --- will scale & crop with screen -- focus in top & center of image ----------->
         <div style="background-image: url(${values.images.left}); 
         background-size: cover; background-position: top center; min-height: 400px;" class="h-100"></div>
@@ -575,28 +589,37 @@ class="container-fluid p-3 my-5" >
       </div>
       <div class="col-md-7 pl-md-3">
         <!--- about block -- will scroll when filled --->
-        <div class="pt-3 px-3 pb-1" style="border-radius: 1em; font-size: 10pt; height: 450px; overflow:auto; background: ${values.colors.contentBox};">
+        <div class="pt-3 px-3 pb-1" style="border-radius: 1em; font-size: 10pt; height: 450px; overflow:auto; background: ${
+			values.colors.contentBox
+		};">
             <h4 class="text-uppercase" style="letter-spacing:1px; font-weight: 300; opacity: 0.7;">
               <i class="fal fa-bookmark mr-1"></i>About
             </h4>
-            <div class="mb-2">${values.about.split('\n').map(c => `<p>${c}</p>`).join('')}</div>
+            <div class="mb-2">${values.about
+				.split('\n')
+				.map((c) => `<p>${c}</p>`)
+				.join('')}</div>
  
             <h4 class="text-uppercase" style="letter-spacing:1px; font-weight: 300; opacity: 0.7;">
               <i class="fal fa-bookmark mr-1"></i>Trivia
             </h4>
             <ul>
-              ${values.trivia.map(item => `<li class="mb-2">${item.value}</li>`).join('')}
+              ${values.trivia
+					.map((item) => `<li class="mb-2">${item.value}</li>`)
+					.join('')}
             </ul>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div class="p-3" style="border-radius: 1em; background: ${values.colors.focal};"><p class="text-white text-center" style="letter-spacing: 1px;">
+<div class="p-3" style="border-radius: 1em; background: ${
+									values.colors.focal
+								};"><p class="text-white text-center" style="letter-spacing: 1px;">
   <i class="fal fa-quote-left fa-fw mr-1 pull-left" /><span>
   ${values.quote}
   </span><i class="fal fa-quote-right fa-fw ml-1 pull-right" /></p></div>
-  <!-- ${ Globals.watermark } -->
+  <!-- ${Globals.watermark} -->
 </div>
 `}</code>
 							</pre>

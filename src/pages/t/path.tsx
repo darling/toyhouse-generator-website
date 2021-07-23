@@ -2,7 +2,12 @@ import { FieldArray, Formik } from 'formik';
 import { concat, take, times, truncate } from 'lodash';
 import React from 'react';
 
-import { FormColorInput, FormGroup, FormInput, FormLongInput } from '../../components/FormGroups';
+import {
+	FormColorInput,
+	FormGroup,
+	FormInput,
+	FormLongInput,
+} from '../../components/FormGroups';
 import { PageSegment } from '../../components/PageSegment';
 import { Meta } from '../../layout/Meta';
 import { TemplatePage } from '../../templates/TemplatePage';
@@ -224,9 +229,7 @@ const Template = () => {
 													values.design.notes.map(
 														(item, index) => (
 															<div
-																key={
-																	index
-																}
+																key={index}
 																className="my-4"
 															>
 																<FormInput
@@ -314,13 +317,8 @@ const Template = () => {
 								<PageSegment>
 									<div className="tw-prose tw-prose-sm tw-rounded-lg tw-bg-gray-300 tw-p-3">
 										<p>
-											Images and Icons may render weird or
-											be placed wrongly within their
-											container. This is just the preview,
-											please try testing the code on
-											toyhouse just incase. (I don't want
-											to pay for font-awesome premium,
-											which toyhouse has.)
+											Images may render weird or be placed
+											wrongly within their container.
 										</p>
 									</div>
 									{/* ### START ### */}
