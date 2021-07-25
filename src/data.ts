@@ -1125,7 +1125,7 @@ themeData.push({
 });
 
 themeData.push({
-	name: 'Undefined',
+	name: 'Simple Dynamic Card',
 	userCode: 'Safe',
 	declaredData: {
 		profile: {
@@ -1174,7 +1174,7 @@ themeData.push({
       }]
     }
 	},
-	themeLink: '',
+	themeLink: 'https://toyhou.se/12043297.-f2u-simple-dynamic-card',
 	html: `
 <div class="mx-auto container">
 <!---------------------
