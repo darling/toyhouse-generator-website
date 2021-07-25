@@ -31,22 +31,22 @@ export interface ITypeParamData {
 
 export const themeData: IThemeData[] = [];
 
-themeData.push({
-	name: 'Test Case',
-	userCode: 'safe',
-	themeLink: '',
-	declaredData: {
-		name: 'Carter',
-		color: '#333333',
-		profile: {
-			name: 'Caret',
-			bool: true,
-			adjectives: { first: '', second: '' },
-		},
-	},
-	typings: { color: 'color', profile: { bool: 'check' } },
-	html: '<div>Hello my name is {{ name }}.</div>',
-});
+// themeData.push({
+// 	name: 'Test Case',
+// 	userCode: 'safe',
+// 	themeLink: '',
+// 	declaredData: {
+// 		name: 'Carter',
+// 		color: '#333333',
+// 		profile: {
+// 			name: 'Caret',
+// 			bool: true,
+// 			adjectives: { first: '', second: '' },
+// 		},
+// 	},
+// 	typings: { color: 'color', profile: { bool: 'check' } },
+// 	html: '<div>Hello my name is {{ name }}.</div>',
+// });
 
 themeData.push({
 	name: 'Drivers License',
@@ -1152,11 +1152,11 @@ themeData.push({
 			sideNote: 'rlly tiny note if u want...',
 		},
 		socials: [
-			{ value: 'instagram', url: 'https://toyhou.se' },
-			{ value: 'tumblr', url: 'https://toyhou.se' },
-			{ value: 'twitter', url: 'https://toyhou.se' },
+			{ value: 'instagram',  url: 'https://toyhou.se' },
+			{ value: 'tumblr',     url: 'https://toyhou.se' },
+			{ value: 'twitter',    url: 'https://toyhou.se' },
 			{ value: 'deviantart', url: 'https://toyhou.se' },
-			{ value: 'spotify', url: 'https://toyhou.se' },
+			{ value: 'spotify',    url: 'https://toyhou.se' },
 		],
 		layout: { reverse: false, column: false, outside: { border: true, rounded: true } },
 		spacing: { height: '15', width: '30', betweenLinks: '0.45' },
