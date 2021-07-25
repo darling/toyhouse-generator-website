@@ -1,18 +1,12 @@
+import { kebabCase } from 'lodash';
 import Link from 'next/link';
-import React from 'react';
+import React, { FC } from 'react';
+import { authorData } from '../authors';
 
 import { Meta } from '../layout/Meta';
 import { Main } from '../templates/Main';
 
-const authors = [
-	{ name: '8Byte', slug: '8Byte' },
-	{ name: 'Togo', slug: 'Togo' },
-	{ name: 'Eggy', slug: 'Eggy' },
-	{ name: 'Camy', slug: 'Camy' },
-	{ name: 'Safe', slug: 'Safe' },
-];
-
-const Index = () => {
+const Index: FC = () => {
 	return (
 		<Main
 			meta={
@@ -36,13 +30,15 @@ const Index = () => {
 				</p>
 				<h2>List of authors</h2>
 				<ul>
-					{authors.map((author) => (
-						<li key={author.slug}>
-							<Link href={`/a/${author.slug}`}>
-								<a>{author.name}</a>
-							</Link>
-						</li>
-					))}
+					{authorData.map((author) => {
+						return (
+							<li key={author.name}>
+								<Link href={`/o/${kebabCase(author.name)}`}>
+									<a>{author.name}</a>
+								</Link>
+							</li>
+						);
+					})}
 				</ul>
 			</div>
 		</Main>
